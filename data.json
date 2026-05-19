@@ -1,0 +1,98 @@
+{
+  "journal": {
+    "nomJournal": "Seinen Perspectives",
+    "logo": "assets/images/logo.svg",
+    "phraseAccroche": "Explorez les récits profonds et matures du manga seinen",
+    "texteAppelAction": "Abonnez-vous pour découvrir les œuvres qui redéfinissent la bande dessinée adulte",
+    "articlePrincipal": {
+      "titre": "Monster : une plongée dans le thriller psychologique ultime",
+      "description": "Cette série emblématique de Naoki Urasawa interroge la nature humaine avec une narration haletante et complexe.",
+      "date": "20 Mai 2025",
+      "theme": "Classiques incontournables",
+      "image": "assets/images/image1.png"
+    },
+    "articles": [
+      {
+        "titre": "Vagabond : l’art et la philosophie du samouraï",
+        "date": "15 Avril 2025",
+        "theme": "Esthétique & narration",
+        "image": "assets/images/image2.png",
+        "popularite": 25
+      },
+      {
+        "titre": "Berserk : plongée dans un univers dark fantasy brutal",
+        "date": "10 Mars 2025",
+        "theme": "Thématiques adultes",
+        "image": "assets/images/image3.jpg",
+        "popularite": 18
+      },
+      {
+        "titre": "Les débats sur la fin de Ghost in the Shell",
+        "date": "25 Février 2025",
+        "theme": "Débats & analyses",
+        "image": "assets/images/image4.jpg",
+        "popularite": 60
+      },
+      {
+        "titre": "Collaborations et adaptations : du manga au cinéma",
+        "date": "10 Janvier 2025",
+        "theme": "Création & partenariats",
+        "image": "assets/images/image2.png",
+        "popularite": 15
+      },
+      {
+        "titre": "Éthique et représentations dans les mangas adultes",
+        "date": "5 Décembre 2024",
+        "theme": "Culture & valeurs",
+        "image": "assets/images/image3.jpg",
+        "popularite": 68
+      }
+    ],
+    "themes": [
+      {
+        "nom": "Classiques incontournables",
+        "description": "Les œuvres majeures qui ont défini le genre seinen."
+      },
+      {
+        "nom": "Esthétique & narration",
+        "description": "L’art graphique et les techniques narratives spécifiques au seinen."
+      },
+      {
+        "nom": "Thématiques adultes",
+        "description": "Les sujets matures, psychologiques et sociétaux explorés."
+      },
+      {
+        "nom": "Débats & analyses",
+        "description": "Réflexions sur les fins, les messages et l’impact des séries."
+      },
+      {
+        "nom": "Création & partenariats",
+        "description": "Les coulisses de la création, adaptations et collaborations."
+      },
+      {
+        "nom": "Culture & valeurs",
+        "description": "Les enjeux culturels et éthiques dans les mangas pour adultes."
+      }
+    ],
+    "auteurs": [
+      {
+        "prenom": "Claire",
+        "typeExperience": "Critique manga spécialisé",
+        "presentation": "Je mets en lumière les récits complexes et les artistes du seinen.",
+        "photo": "assets/images/image2.png"
+      },
+      {
+        "prenom": "Thomas",
+        "typeExperience": "Historien du manga adulte",
+        "presentation": "J’analyse l’évolution et les influences des mangas destinés aux adultes.",
+        "photo": "assets/images/image3.jpg"
+      },
+      {
+        "prenom": "Elena",
+        "typeExperience": "Sociologue culturelle",
+        "presentation": "J’étudie l’impact social des récits adultes et leurs représentations.",
+        "photo": "assets/images/image4.jpg"
+      }
+    ]
+  }
+}
