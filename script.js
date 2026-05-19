@@ -22,24 +22,36 @@ function getData() {
 
       // TODO 2: REMPLIR LA NAVIGATION
       
-      let themesnavContenaire = document.getElementById('themes-nav');
-      let theme1 = data.journal.themes[0].nom;
-      let theme2 = data.journal.themes[1].nom;
-      let theme3 = data.journal.themes[2].nom;
-      let theme4 = data.journal.themes[3].nom;
-      let theme5 = data.journal.themes[4].nom;
-      let theme6 = data.journal.themes[5].nom;
+      data.journal.themes.forEach(themeBouton => {
+        let themesBoutonContenaire = document.getElementById('themes-nav');
+        let nomBoutonTheme = themeBouton.nom;
+        let descriptionBoutonTheme = themeBouton.description;
+        
+        // faut faire un truc comme ca
+        // let contenuBoutonsThemes = ``;
+        // if(nomBoutonTheme == themeBouton[0]){
+        //   const contenuBoutonsThemes = `
+        //     <button class="nav-theme-btn active">${themeBouton.nom}</button>
+        //   `
+        // }else{
+        //   const contenuBoutonsThemes = `
+        //     <button class="nav-theme-btn">${themeBouton.nom}</button>
+        //   `
+        // }
 
-      let boutonsNavbar = `
-        <button class="nav-theme-btn active">${theme1}</button>
-        <button class="nav-theme-btn">${theme2}</button>
-        <button class="nav-theme-btn">${theme3}</button>
-        <button class="nav-theme-btn">${theme4}</button>
-        <button class="nav-theme-btn">${theme5}</button>
-        <button class="nav-theme-btn">${theme6}</button>
-      `
-      
-      themesnavContenaire.insertAdjacentHTML("beforeend", boutonsNavbar);
+        const contenuBoutonsThemes = `
+            <button class="nav-theme-btn">${themeBouton.nom}</button>
+          `
+
+        themesBoutonContenaire.insertAdjacentHTML('beforeend', contenuBoutonsThemes);
+      });
+
+      //   LE PREMIER BOUTON DOIT ETRE BLEU
+
+      //   <button class="nav-theme-btn active">${theme1}</button>
+      //   <button class="nav-theme-btn">${theme2}</button>
+      //   <button class="nav-theme-btn">${theme3}</button>
+      //   ...
 
       // TODO 3: REMPLIR L'ARTICLE PRINCIPAL
 
@@ -112,7 +124,7 @@ function getData() {
 
         const contenuAuteurs = `
           <div class="author-card">
-              <div class="author-image">${photoAuteur}</div>
+              <img class="author-image" src="${photoAuteur}">
               <h3>${prenomAuteur}</h3>
               <p class="author-role">${experienceAuteur}</p>
               <p class="author-bio">${presentationAuteur}</p>
@@ -122,6 +134,15 @@ function getData() {
       });
 
       // TODO 7: REMPLIR LE CALL TO ACTION
+
+      let callToActionContenaire = document.getElementById('call-to-action');
+
+      const contenuCallToAction = `
+        <p>Rejoignez notre newsletter pour suivre vos idols préférés</p>
+        <button class="cta-button">S'abonner</button>
+      `
+
+      callToActionContenaire.insertAdjacentHTML('beforeend', contenuCallToAction);
 
       /// FIN DU CODE
 
