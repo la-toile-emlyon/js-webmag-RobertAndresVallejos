@@ -5,7 +5,7 @@
    --primary:       #18181b;
    --primary-light: #27272a;
    --accent:        #ce434f;
-   --accent-hover:  #1d4ed8;
+   --accent-hover:  #ce434fa3;
    --bg:            #f4f4f5;
    --bg-card:       #ffffff;
    --border:        #e4e4e7;
@@ -357,7 +357,7 @@ p  { color: var(--text-muted); line-height: 1.7; }
 .cta-button:hover {
    background: var(--accent-hover);
    transform: translateY(-2px);
-   box-shadow: 0 6px 20px rgba(37,99,235,.35);
+   box-shadow: 0 6px 20px #ce434f39;
 }
 
 /* ── Footer ── */
