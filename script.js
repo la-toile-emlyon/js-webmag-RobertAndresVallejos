@@ -1,3 +1,8 @@
+AOS.init();
+// BONUS 1 : Alert sur le bouton CTA
+function alertFunction() {
+  alert("⚠️ ALERTE ⚠️");
+}
 function getData() {
   fetch('data.json')
     .then((response) => {
@@ -21,46 +26,83 @@ function getData() {
       sousTitreContenaire.innerHTML = sousTitre;
 
       // TODO 2: REMPLIR LA NAVIGATION
-      
-      data.journal.themes.forEach(themeBouton => {
+
+      // let themesBoutonContenaire = document.getElementById('themes-nav');
+      // let titreBoutonTous = `<button class="nav-theme-btn active">Tous</button>`;
+      // themesBoutonContenaire.innerHTML = titreBoutonTous;
+
+      // data.journal.themes.forEach(themeBouton => {
+      //   let themesBoutonContenaire = document.getElementById('themes-nav');
+      //   let nomBoutonTheme = themeBouton.nom;
+
+      //   const contenuBoutonsThemes = `
+      //       <button class="nav-theme-btn">${themeBouton.nom}</button>
+      //     `
+      //   themesBoutonContenaire.insertAdjacentHTML('beforeend', contenuBoutonsThemes);
+      // });
+
+      // BONUS 2 : Filtrage par thème
+          
+      let themesBoutonContenaire = document.getElementById('themes-nav');
+      let titreBoutonTous = `<button class="nav-theme-btn active">Tous</button>`;
+      themesBoutonContenaire.innerHTML = titreBoutonTous;
+
+      function creerBouton(bouton) {
         let themesBoutonContenaire = document.getElementById('themes-nav');
-        let nomBoutonTheme = themeBouton.nom;
-        let descriptionBoutonTheme = themeBouton.description;
-        
-        // faut faire un truc comme ca
-        // let contenuBoutonsThemes = ``;
-        // if(nomBoutonTheme == themeBouton[0]){
-        //   const contenuBoutonsThemes = `
-        //     <button class="nav-theme-btn active">${themeBouton.nom}</button>
-        //   `
-        // }else{
-        //   const contenuBoutonsThemes = `
-        //     <button class="nav-theme-btn">${themeBouton.nom}</button>
-        //   `
-        // }
+        let nomBoutonTheme = bouton.nom;
 
         const contenuBoutonsThemes = `
-            <button class="nav-theme-btn">${themeBouton.nom}</button>
+            <button class="nav-theme-btn">${bouton.nom}</button>
           `
-
         themesBoutonContenaire.insertAdjacentHTML('beforeend', contenuBoutonsThemes);
+      }
+
+      data.journal.themes.forEach(element => {
+        creerBouton(element);
       });
 
-      //   LE PREMIER BOUTON DOIT ETRE BLEU
+      let buttonTous = document.getElementById('1');
+      let buttonClassiquesIncontournables = data.journal.themes[0].nom;
+      let buttonEsthetiqueEtNarration = data.journal.themes[1].nom;
+      let buttonThematiquesAdultes = data.journal.themes[2].nom;
+      let buttonDebatsEtAnalyses = data.journal.themes[3].nom;
+      let buttonCreationEtPartenariats = data.journal.themes[4].nom;
+      let buttonCultureEtValeurs = data.journal.themes[5].nom;
 
-      //   <button class="nav-theme-btn active">${theme1}</button>
-      //   <button class="nav-theme-btn">${theme2}</button>
-      //   <button class="nav-theme-btn">${theme3}</button>
-      //   ...
+      buttonClassiquesIncontournables.addEventListener("click", function(){
+        // let themesBoutonContenaire = document.getElementById('themes-nav');
+        // let filteredCategory = "Classiques incontournables";
+        let filteredCategory = buttonClassiquesIncontournables;
+        themesBoutonContenaire.innerHTML = '';
+
+          data.journal.themes.forEach(product => {
+          if(product.theme.nom == filteredCategory){
+            creerBouton(product);
+            // AFFICHER LA CREATION D'ARTICLE
+          }
+        });
+      });
+
+    //   buttonEsthetiqueEtNarration.addEventListener("click", function(){
+    //     let themesBoutonContenaire = document.getElementById('themes-nav');// TEST
+    //     let filteredCategory = "Esthétique & narration";
+    //     themesBoutonContenaire.innerHTML = '';
+
+    //     products.forEach(product => {
+    //       if(product.theme.nom == filteredCategory){
+    //         createCard(product);
+    //       }
+    //     });
+    //   });
 
       // TODO 3: REMPLIR L'ARTICLE PRINCIPAL
 
       let articlePrincipalContenaire = document.getElementById('article-principal');
+      let imageArticlePrincipal = data.journal.articlePrincipal.image;
+      let themeArticlePrincipal = data.journal.articlePrincipal.theme;
       let titreArticlePrincipal = data.journal.articlePrincipal.titre
       let descriptionArticlePrincipal = data.journal.articlePrincipal.description;
       let dateArticlePrincipal = data.journal.articlePrincipal.date;
-      let themeArticlePrincipal = data.journal.articlePrincipal.theme;
-      let imageArticlePrincipal = data.journal.articlePrincipal.image;
 
       let contenu = `
         <img id="hero-image" src="${imageArticlePrincipal}">
@@ -72,20 +114,19 @@ function getData() {
         </div>
          
       `
-      
       articlePrincipalContenaire.insertAdjacentHTML("beforeend", contenu);
 
       // TODO 4: REMPLIR LA GRILLE D'ARTICLES
      
       data.journal.articles.forEach( article => {
       let articleContenaire = document.getElementById('articles-grid');
+      let imageArticle = article.image;
+      let themeArticle = article.theme;
       let titreArticle = article.titre;
       let dateArticle = article.date;
-      let themeArticle = article.theme;
-      let imageArticle = article.image;
 
         const contenuArticles = `
-          <div class="article-card">
+          <div class="article-card" data-aos="fade-up" data-aos-duration="1000">
             <img src="${imageArticle}" alt="${imageArticle}">
             <div class="article-content">
                 <div class="theme-badge">${themeArticle}</div>
@@ -105,7 +146,7 @@ function getData() {
         let descriptionTheme = theme.description;
 
         const contenuThemes = `
-          <div class="theme-item">
+          <div class="theme-item" data-aos="flip-left">
               <h3>${nomTheme}</h3>
               <p>${descriptionTheme}</p>
           </div>
@@ -123,7 +164,7 @@ function getData() {
         let presentationAuteur = auteur.presentation;
 
         const contenuAuteurs = `
-          <div class="author-card">
+          <div class="author-card" data-aos="zoom-in">
               <img class="author-image" src="${photoAuteur}">
               <h3>${prenomAuteur}</h3>
               <p class="author-role">${experienceAuteur}</p>
@@ -139,7 +180,7 @@ function getData() {
 
       const contenuCallToAction = `
         <p>Rejoignez notre newsletter pour suivre vos idols préférés</p>
-        <button class="cta-button">S'abonner</button>
+        <button class="cta-button" onclick="alertFunction()">S'abonner</button>
       `
 
       callToActionContenaire.insertAdjacentHTML('beforeend', contenuCallToAction);
@@ -147,6 +188,7 @@ function getData() {
       /// FIN DU CODE
 
       // BONUS 1 : Alert sur le bouton CTA
+      // Réponse : script.js ligne 2-5
 
       // BONUS 2 : Filtrage par thème
 
