@@ -26,74 +26,75 @@ function getData() {
       sousTitreContenaire.innerHTML = sousTitre;
 
       // TODO 2: REMPLIR LA NAVIGATION
-
-      // let themesBoutonContenaire = document.getElementById('themes-nav');
-      // let titreBoutonTous = `<button class="nav-theme-btn active">Tous</button>`;
-      // themesBoutonContenaire.innerHTML = titreBoutonTous;
-
-      // data.journal.themes.forEach(themeBouton => {
-      //   let themesBoutonContenaire = document.getElementById('themes-nav');
-      //   let nomBoutonTheme = themeBouton.nom;
-
-      //   const contenuBoutonsThemes = `
-      //       <button class="nav-theme-btn">${themeBouton.nom}</button>
-      //     `
-      //   themesBoutonContenaire.insertAdjacentHTML('beforeend', contenuBoutonsThemes);
-      // });
-
-      // BONUS 2 : Filtrage par thème
-          
       let themesBoutonContenaire = document.getElementById('themes-nav');
       let titreBoutonTous = `<button class="nav-theme-btn active">Tous</button>`;
       themesBoutonContenaire.innerHTML = titreBoutonTous;
 
-      function creerBouton(bouton) {
-        let themesBoutonContenaire = document.getElementById('themes-nav');
-        let nomBoutonTheme = bouton.nom;
+      data.journal.themes.forEach(themeBouton => {
+        let nomBoutonTheme = themeBouton.nom;
 
         const contenuBoutonsThemes = `
-            <button class="nav-theme-btn">${bouton.nom}</button>
+            <button class="nav-theme-btn">${themeBouton.nom}</button>
           `
         themesBoutonContenaire.insertAdjacentHTML('beforeend', contenuBoutonsThemes);
-      }
-
-      data.journal.themes.forEach(element => {
-        creerBouton(element);
       });
 
-      let buttonTous = document.getElementById('1');
-      let buttonClassiquesIncontournables = data.journal.themes[0].nom;
-      let buttonEsthetiqueEtNarration = data.journal.themes[1].nom;
-      let buttonThematiquesAdultes = data.journal.themes[2].nom;
-      let buttonDebatsEtAnalyses = data.journal.themes[3].nom;
-      let buttonCreationEtPartenariats = data.journal.themes[4].nom;
-      let buttonCultureEtValeurs = data.journal.themes[5].nom;
+      
+      // BONUS 2 : Filtrage par thème
+          
+      // let themesBoutonContenaire = document.getElementById('themes-nav');
+      // let titreBoutonTous = `<button class="nav-theme-btn active">Tous</button>`;
+      // themesBoutonContenaire.innerHTML = titreBoutonTous;
 
-      buttonClassiquesIncontournables.addEventListener("click", function(){
-        // let themesBoutonContenaire = document.getElementById('themes-nav');
-        // let filteredCategory = "Classiques incontournables";
-        let filteredCategory = buttonClassiquesIncontournables;
-        themesBoutonContenaire.innerHTML = '';
+      // function creerBouton(bouton) {
+      //   let themesBoutonContenaire = document.getElementById('themes-nav');
+      //   let nomBoutonTheme = bouton.nom;
 
-          data.journal.themes.forEach(product => {
-          if(product.theme.nom == filteredCategory){
-            creerBouton(product);
-            // AFFICHER LA CREATION D'ARTICLE
-          }
-        });
-      });
+      //   const contenuBoutonsThemes = `
+      //       <button class="nav-theme-btn">${bouton.nom}</button>
+      //     `;
+      //   themesBoutonContenaire.insertAdjacentHTML('beforeend', contenuBoutonsThemes);
+      // }
 
-    //   buttonEsthetiqueEtNarration.addEventListener("click", function(){
-    //     let themesBoutonContenaire = document.getElementById('themes-nav');// TEST
-    //     let filteredCategory = "Esthétique & narration";
-    //     themesBoutonContenaire.innerHTML = '';
+      // data.journal.themes.forEach(element => {
+      //   creerBouton(element);
+      // });
 
-    //     products.forEach(product => {
-    //       if(product.theme.nom == filteredCategory){
-    //         createCard(product);
-    //       }
-    //     });
-    //   });
+      // let buttonTous = document.getElementById('1');
+      // let buttonClassiquesIncontournables = data.journal.themes[0].nom;
+      // let buttonEsthetiqueEtNarration = data.journal.themes[1].nom;
+      // let buttonThematiquesAdultes = data.journal.themes[2].nom;
+      // let buttonDebatsEtAnalyses = data.journal.themes[3].nom;
+      // let buttonCreationEtPartenariats = data.journal.themes[4].nom;
+      // let buttonCultureEtValeurs = data.journal.themes[5].nom;
+
+      // buttonClassiquesIncontournables.addEventListener("click", function(){
+      //   // let themesBoutonContenaire = document.getElementById('themes-nav');
+      //   // let filteredCategory = "Classiques incontournables";
+      //   let filteredCategory = "Classiques incontournables";
+      //   themesBoutonContenaire.innerHTML = '';
+
+      //     data.journal.themes.forEach(product => {
+      //     if(product.theme.nom == filteredCategory){
+      //       creerBouton(product);
+      //       // AFFICHER LA CREATIdata.journal.themes
+      //       // ON D'ARTICLE
+      //     }
+      //   });
+      // });
+
+      //   buttonEsthetiqueEtNarration.addEventListener("click", function(){
+      //     let themesBoutonContenaire = document.getElementById('themes-nav');// TEST
+      //     let filteredCategory = "Esthétique & narration";
+      //     themesBoutonContenaire.innerHTML = '';
+
+      //     products.forEach(product => {
+      //       if(product.theme.nom == filteredCategory){
+      //         createCard(product);
+      //       }
+      //     });
+      //   });
+
 
       // TODO 3: REMPLIR L'ARTICLE PRINCIPAL
 
@@ -105,7 +106,7 @@ function getData() {
       let dateArticlePrincipal = data.journal.articlePrincipal.date;
 
       let contenu = `
-        <img id="hero-image" src="${imageArticlePrincipal}">
+        <img style="object-position: top;" id="hero-image" src="${imageArticlePrincipal}">
         <div class="hero-info">
           <div class="theme-badge">${themeArticlePrincipal}</div>
           <h2 id="hero-titre">${titreArticlePrincipal}</h2>
@@ -127,7 +128,7 @@ function getData() {
 
         const contenuArticles = `
           <div class="article-card" data-aos="fade-up" data-aos-duration="1000">
-            <img src="${imageArticle}" alt="${imageArticle}">
+            <img src="${imageArticle}" style="object-position: top;" alt="${imageArticle}">
             <div class="article-content">
                 <div class="theme-badge">${themeArticle}</div>
                 <h3>${titreArticle}</h3>
@@ -180,7 +181,7 @@ function getData() {
 
       const contenuCallToAction = `
         <p>Rejoignez notre newsletter pour suivre vos idols préférés</p>
-        <button class="cta-button" onclick="alertFunction()">S'abonner</button>
+        <button class="cta-button" data-aos="fade-down" onclick="alertFunction()">S'abonner</button>
       `
 
       callToActionContenaire.insertAdjacentHTML('beforeend', contenuCallToAction);

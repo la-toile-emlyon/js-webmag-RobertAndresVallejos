@@ -9,42 +9,42 @@
       "description": "Cette série emblématique de Naoki Urasawa interroge la nature humaine avec une narration haletante et complexe.",
       "date": "20 Mai 2025",
       "theme": "Classiques incontournables",
-      "image": "assets/images/image1.png"
+      "image": "assets/images/monster.jpg"
     },
     "articles": [
       {
         "titre": "Vagabond : l’art et la philosophie du samouraï",
         "date": "15 Avril 2025",
         "theme": "Esthétique & narration",
-        "image": "assets/images/image2.png",
+        "image": "assets/images/Vagabond-manga.jpg",
         "popularite": 25
       },
       {
         "titre": "Berserk : plongée dans un univers dark fantasy brutal",
         "date": "10 Mars 2025",
         "theme": "Thématiques adultes",
-        "image": "assets/images/image3.jpg",
+        "image": "assets/images/berserk.webp",
         "popularite": 18
       },
       {
-        "titre": "Les débats sur la fin de Ghost in the Shell",
+        "titre": "Kingdom : Le manga passe le cap des 120 millions !",
         "date": "25 Février 2025",
         "theme": "Débats & analyses",
-        "image": "assets/images/image4.jpg",
+        "image": "assets/images/kingdom.jpg",
         "popularite": 60
       },
       {
-        "titre": "Collaborations et adaptations : du manga au cinéma",
+        "titre": "Fire Punch : Absolute cinéma ou Absolut Vodka ?",
         "date": "10 Janvier 2025",
         "theme": "Création & partenariats",
-        "image": "assets/images/image2.png",
+        "image": "assets/images/firepunch.jpeg",
         "popularite": 15
       },
       {
-        "titre": "Éthique et représentations dans les mangas adultes",
+        "titre": "Vinland Saga : I HAVE NO ENEMIES  ",
         "date": "5 Décembre 2024",
         "theme": "Culture & valeurs",
-        "image": "assets/images/image3.jpg",
+        "image": "assets/images/vinlandsaga.jpg",
         "popularite": 68
       }
     ],
@@ -76,22 +76,22 @@
     ],
     "auteurs": [
       {
-        "prenom": "Claire",
-        "typeExperience": "Critique manga spécialisé",
-        "presentation": "Je mets en lumière les récits complexes et les artistes du seinen.",
-        "photo": "assets/images/image2.png"
+        "prenom": "Mademoiselle Soso",
+        "typeExperience": "Créatice de contenu",
+        "presentation": "Je partage mes pépites mangas et mes coups de cœur au quotidien, avec le sourire et sans prise de tête !",
+        "photo": "assets/images/soso.jpeg"
       },
       {
-        "prenom": "Thomas",
-        "typeExperience": "Historien du manga adulte",
-        "presentation": "J’analyse l’évolution et les influences des mangas destinés aux adultes.",
-        "photo": "assets/images/image3.jpg"
+        "prenom": "Le Chef Otaku",
+        "typeExperience": "Pilier & Vétéran de Youtube",
+        "presentation": "Pionnier des vidéos manga, je décortique vos œuvres préférées avec passion et franc-parler.",
+        "photo": "assets/images/chefotaku.jpg"
       },
       {
-        "prenom": "Elena",
+        "prenom": "Jenna",
         "typeExperience": "Sociologue culturelle",
         "presentation": "J’étudie l’impact social des récits adultes et leurs représentations.",
-        "photo": "assets/images/image4.jpg"
+        "photo": "assets/images/jenna.webp"
       }
     ]
   }

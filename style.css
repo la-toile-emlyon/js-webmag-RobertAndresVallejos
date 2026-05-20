@@ -4,7 +4,7 @@
 :root {
    --primary:       #18181b;
    --primary-light: #27272a;
-   --accent:        #2563eb;
+   --accent:        #ce434f;
    --accent-hover:  #1d4ed8;
    --bg:            #f4f4f5;
    --bg-card:       #ffffff;
@@ -329,7 +329,7 @@ p  { color: var(--text-muted); line-height: 1.7; }
    content: '';
    position: absolute;
    inset: 0;
-   background: radial-gradient(ellipse at 50% 120%, rgba(37,99,235,.25) 0%, transparent 65%);
+   background: radial-gradient(ellipse at 50% 120%, #ce434f 0%, transparent 65%);
    pointer-events: none;
 }
 #call-to-action p {
