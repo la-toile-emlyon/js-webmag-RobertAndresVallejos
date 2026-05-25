@@ -38,64 +38,7 @@ function getData() {
           `
         themesBoutonContenaire.insertAdjacentHTML('beforeend', contenuBoutonsThemes);
       });
-
       
-      // BONUS 2 : Filtrage par thème
-          
-      // let themesBoutonContenaire = document.getElementById('themes-nav');
-      // let titreBoutonTous = `<button class="nav-theme-btn active">Tous</button>`;
-      // themesBoutonContenaire.innerHTML = titreBoutonTous;
-
-      // function creerBouton(bouton) {
-      //   let themesBoutonContenaire = document.getElementById('themes-nav');
-      //   let nomBoutonTheme = bouton.nom;
-
-      //   const contenuBoutonsThemes = `
-      //       <button class="nav-theme-btn">${bouton.nom}</button>
-      //     `;
-      //   themesBoutonContenaire.insertAdjacentHTML('beforeend', contenuBoutonsThemes);
-      // }
-
-      // data.journal.themes.forEach(element => {
-      //   creerBouton(element);
-      // });
-
-      // let buttonTous = document.getElementById('1');
-      // let buttonClassiquesIncontournables = data.journal.themes[0].nom;
-      // let buttonEsthetiqueEtNarration = data.journal.themes[1].nom;
-      // let buttonThematiquesAdultes = data.journal.themes[2].nom;
-      // let buttonDebatsEtAnalyses = data.journal.themes[3].nom;
-      // let buttonCreationEtPartenariats = data.journal.themes[4].nom;
-      // let buttonCultureEtValeurs = data.journal.themes[5].nom;
-
-      // buttonClassiquesIncontournables.addEventListener("click", function(){
-      //   // let themesBoutonContenaire = document.getElementById('themes-nav');
-      //   // let filteredCategory = "Classiques incontournables";
-      //   let filteredCategory = "Classiques incontournables";
-      //   themesBoutonContenaire.innerHTML = '';
-
-      //     data.journal.themes.forEach(product => {
-      //     if(product.theme.nom == filteredCategory){
-      //       creerBouton(product);
-      //       // AFFICHER LA CREATIdata.journal.themes
-      //       // ON D'ARTICLE
-      //     }
-      //   });
-      // });
-
-      //   buttonEsthetiqueEtNarration.addEventListener("click", function(){
-      //     let themesBoutonContenaire = document.getElementById('themes-nav');// TEST
-      //     let filteredCategory = "Esthétique & narration";
-      //     themesBoutonContenaire.innerHTML = '';
-
-      //     products.forEach(product => {
-      //       if(product.theme.nom == filteredCategory){
-      //         createCard(product);
-      //       }
-      //     });
-      //   });
-
-
       // TODO 3: REMPLIR L'ARTICLE PRINCIPAL
 
       let articlePrincipalContenaire = document.getElementById('article-principal');
@@ -119,14 +62,14 @@ function getData() {
 
       // TODO 4: REMPLIR LA GRILLE D'ARTICLES
      
-      data.journal.articles.forEach( article => {
-      let articleContenaire = document.getElementById('articles-grid');
-      let imageArticle = article.image;
-      let themeArticle = article.theme;
-      let titreArticle = article.titre;
-      let dateArticle = article.date;
+        function creerCardArticle(article) {
+        let articleContenaire = document.getElementById('articles-grid');
+        let imageArticle = article.image;
+        let themeArticle = article.theme;
+        let titreArticle = article.titre;
+        let dateArticle = article.date;
 
-        const contenuArticles = `
+        const htmlCard = `
           <div class="article-card" data-aos="fade-up" data-aos-duration="1000">
             <img src="${imageArticle}" style="object-position: top;" alt="${imageArticle}">
             <div class="article-content">
@@ -136,8 +79,11 @@ function getData() {
             </div>
           </div>
         `;
-        articleContenaire.insertAdjacentHTML('beforeend', contenuArticles);
-      });
+        articleContenaire.insertAdjacentHTML('beforeend', htmlCard);
+      }
+
+      // BONUS 3
+      data.journal.articles.sort((article1, article2) => article2.popularite - article1.popularite);
 
       // TODO 5: REMPLIR LES THEMES
 
@@ -192,8 +138,31 @@ function getData() {
       // Réponse : script.js ligne 2-5
 
       // BONUS 2 : Filtrage par thème
+      data.journal.articles.forEach(article => {
+        creerCardArticle(article);
+      });
+
+      let tousLesBoutons = document.querySelectorAll('.nav-theme-btn');
+
+      tousLesBoutons.forEach(bouton => {
+        bouton.addEventListener("click", function(){
+          let filtreCategorie = bouton.textContent;
+          document.getElementById('articles-grid').innerHTML = '';
+
+          data.journal.articles.forEach(article => {
+            if(article.theme == filtreCategorie){
+              creerCardArticle(article);
+            }else if("Tous" == filtreCategorie){
+              creerCardArticle(article);
+            }
+          });
+
+        });
+      });
 
       // BONUS 3 : Tri par popularité
+      // Réponse : script.js ligne 85-86
+
     })
     .catch((error) => console.error('Erreur lors de la lecture des données :', error));
 }

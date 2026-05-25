@@ -13,6 +13,13 @@
     },
     "articles": [
       {
+        "titre": "Bonne nuit Punpun : la perte de l'innocence selon Inio Asano",
+        "date": "25 Mai 2026",
+        "theme": "Classiques incontournables",
+        "image": "assets/images/bonneNuitPunpun.jpg",
+        "popularite": 26
+      },
+      {
         "titre": "Vagabond : l’art et la philosophie du samouraï",
         "date": "15 Avril 2025",
         "theme": "Esthétique & narration",
