@@ -147,6 +147,12 @@ function getData() {
       tousLesBoutons.forEach(bouton => {
         bouton.addEventListener("click", function(){
           let filtreCategorie = bouton.textContent;
+
+          tousLesBoutons.forEach(bouTon => {
+            bouTon.classList.remove('active');
+            bouton.classList.add('active');
+          });
+
           document.getElementById('articles-grid').innerHTML = '';
 
           data.journal.articles.forEach(article => {
